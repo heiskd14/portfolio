@@ -47,30 +47,52 @@ export async function registerRoutes(
 async function seedDatabase() {
   const existingProjects = await storage.getProjects();
   if (existingProjects.length === 0) {
-    await storage.createProject({
-      title: "E-Commerce Platform",
-      description: "A full-featured online store with cart, checkout, and admin dashboard.",
-      imageUrl: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80",
-      projectUrl: "https://demo-store.com",
-      repoUrl: "https://github.com/username/store",
-      tags: ["React", "Node.js", "PostgreSQL", "Stripe"],
-    });
-    await storage.createProject({
-      title: "Task Management App",
-      description: "Collaborative task manager with real-time updates and team features.",
-      imageUrl: "https://images.unsplash.com/photo-1540350394557-8d14678e7f91?w=800&q=80",
-      projectUrl: "https://task-app.com",
-      repoUrl: "https://github.com/username/tasks",
-      tags: ["TypeScript", "Socket.io", "Express"],
-    });
-    await storage.createProject({
-      title: "Weather Dashboard",
-      description: "Real-time weather data visualization using global APIs.",
-      imageUrl: "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&q=80",
-      projectUrl: "https://weather-dash.com",
-      repoUrl: "https://github.com/username/weather",
-      tags: ["React", "D3.js", "OpenWeatherMap"],
-    });
+    const projects = [
+      {
+        title: "CBT Exam System",
+        description: "A comprehensive computer-based testing platform for educational institutions.",
+        imageUrl: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80",
+        projectUrl: "#",
+        repoUrl: "#",
+        tags: ["React", "PostgreSQL", "Node.js"],
+      },
+      {
+        title: "Recipe App API",
+        description: "A robust backend API for managing and sharing culinary recipes.",
+        imageUrl: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80",
+        projectUrl: "#",
+        repoUrl: "#",
+        tags: ["TypeScript", "Express", "Drizzle"],
+      },
+      {
+        title: "Interactive Carousel",
+        description: "A highly performant and accessible UI component for showcasing content.",
+        imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+        projectUrl: "#",
+        repoUrl: "#",
+        tags: ["React", "Framer Motion", "Tailwind"],
+      },
+      {
+        title: "YouTube Website Clone",
+        description: "A pixel-perfect replica of the YouTube interface with video playback features.",
+        imageUrl: "https://images.unsplash.com/photo-1527219525722-da9527aa694d?w=800&q=80",
+        projectUrl: "#",
+        repoUrl: "#",
+        tags: ["React", "YouTube API", "CSS"],
+      },
+      {
+        title: "Jamb CBT Exam",
+        description: "Specialized examination platform tailored for JAMB preparation and simulation.",
+        imageUrl: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&q=80",
+        projectUrl: "#",
+        repoUrl: "#",
+        tags: ["React", "Node.js", "Education"],
+      }
+    ];
+
+    for (const project of projects) {
+      await storage.createProject(project);
+    }
   }
 
   const existingSkills = await storage.getSkills();
