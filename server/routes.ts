@@ -53,7 +53,7 @@ async function seedDatabase() {
         description: "A comprehensive computer-based testing platform for educational institutions.",
         imageUrl: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80",
         projectUrl: "https://cbt-exam-demo.com",
-        repoUrl: "https://github.com/yourusername/cbt-exam",
+        repoUrl: "https://github.com/heiskd14/cbt-exam",
         tags: ["React", "PostgreSQL", "Node.js"],
       },
       {
@@ -61,7 +61,7 @@ async function seedDatabase() {
         description: "A robust backend API for managing and sharing culinary recipes.",
         imageUrl: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80",
         projectUrl: "https://recipe-api-docs.com",
-        repoUrl: "https://github.com/yourusername/recipe-app-api",
+        repoUrl: "https://github.com/heiskd14/recipe-app-api",
         tags: ["TypeScript", "Express", "Drizzle"],
       },
       {
@@ -69,7 +69,7 @@ async function seedDatabase() {
         description: "A highly performant and accessible UI component for showcasing content.",
         imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
         projectUrl: "https://carousel-demo.com",
-        repoUrl: "https://github.com/yourusername/carousel",
+        repoUrl: "https://github.com/heiskd14/Carousel",
         tags: ["React", "Framer Motion", "Tailwind"],
       },
       {
@@ -77,7 +77,7 @@ async function seedDatabase() {
         description: "A pixel-perfect replica of the YouTube interface with video playback features.",
         imageUrl: "https://images.unsplash.com/photo-1527219525722-da9527aa694d?w=800&q=80",
         projectUrl: "https://yt-clone-demo.com",
-        repoUrl: "https://github.com/yourusername/youtubewebsite",
+        repoUrl: "https://github.com/heiskd14/youtubewebsite",
         tags: ["React", "YouTube API", "CSS"],
       },
       {
@@ -85,8 +85,16 @@ async function seedDatabase() {
         description: "Specialized examination platform tailored for JAMB preparation and simulation.",
         imageUrl: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&q=80",
         projectUrl: "https://jamb-cbt-demo.com",
-        repoUrl: "https://github.com/yourusername/jambcbt-exam",
+        repoUrl: "https://github.com/heiskd14/Jambcbt-exam",
         tags: ["React", "Node.js", "Education"],
+      },
+      {
+        title: "Personal Portfolio",
+        description: "A modern developer portfolio website showcasing my projects and skills.",
+        imageUrl: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&q=80",
+        projectUrl: "#",
+        repoUrl: "https://github.com/heiskd14/portfolio",
+        tags: ["React", "Tailwind", "Express", "Drizzle"],
       }
     ];
 
