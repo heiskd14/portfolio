@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { insertMessageSchema, projects, skills, messages } from './schema';
+import { insertMessageSchema, projects, skills, messages, type InsertMessage } from './schema';
 
 export const errorSchemas = {
   validation: z.object({
@@ -42,6 +42,8 @@ export const api = {
     },
   },
 };
+
+export { type InsertMessage };
 
 export function buildUrl(path: string, params?: Record<string, string | number>): string {
   let url = path;
