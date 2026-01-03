@@ -73,7 +73,7 @@ export function Projects() {
                 </CardContent>
                 
                 <CardFooter className="p-6 pt-0 flex gap-3">
-                  {project.projectUrl && (
+                  {project.projectUrl && project.projectUrl !== "" && (
                     <Button asChild size="sm" className="w-full">
                       <a href={project.projectUrl} target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="w-4 h-4 mr-2" /> Live Demo
