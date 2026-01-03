@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
-import { Menu, X, Code2 } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import profilePic from "@assets/MATRIC-320_1767402764655.jpg";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,11 +38,12 @@ export function Navbar() {
           to="hero"
           smooth={true}
           duration={500}
-          className="cursor-pointer flex items-center gap-2 group"
+          className="cursor-pointer flex items-center gap-3 group"
         >
-          <div className="bg-primary/10 p-2 rounded-lg group-hover:bg-primary/20 transition-colors">
-            <Code2 className="w-6 h-6 text-primary" />
-          </div>
+          <Avatar className="w-10 h-10 border-2 border-primary/20 group-hover:border-primary/50 transition-colors">
+            <AvatarImage src={profilePic} alt="Profile" className="object-cover" />
+            <AvatarFallback>KD</AvatarFallback>
+          </Avatar>
           <span className="text-xl font-bold font-display tracking-tight">Portfolio</span>
         </Link>
 
