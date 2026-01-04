@@ -76,7 +76,7 @@ export function Projects() {
                   {project.projectUrl && project.projectUrl !== "" && (
                     <Button asChild size="sm" className="w-full">
                       <a href={project.projectUrl} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="w-4 h-4 mr-2" /> View Output
+                        <ExternalLink className="w-4 h-4 mr-2" /> Live
                       </a>
                     </Button>
                   )}
