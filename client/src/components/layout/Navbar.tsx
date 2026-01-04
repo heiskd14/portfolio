@@ -40,7 +40,7 @@ export function Navbar() {
           duration={500}
           className="cursor-pointer flex items-center gap-3 group"
         >
-          <Avatar className="w-10 h-10 border-2 border-primary/20 group-hover:border-primary/50 transition-colors">
+          <Avatar className="w-12 h-12 border-2 border-primary/20 group-hover:border-primary/50 transition-colors">
             <AvatarImage src={profilePic} alt="Profile" className="object-cover" />
             <AvatarFallback>KD</AvatarFallback>
           </Avatar>
