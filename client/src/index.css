@@ -81,10 +81,17 @@ html {
 }
 
 @media print {
+  @page {
+    size: auto;
+    margin: 10mm;
+  }
+
   html, body {
     height: auto !important;
     overflow: visible !important;
     position: static !important;
+    background: white !important;
+    color: black !important;
   }
   
   main {
@@ -102,7 +109,10 @@ html {
     break-inside: auto !important;
     display: block !important;
     position: static !important;
-    margin-bottom: 2rem;
+    margin-bottom: 2rem !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
   }
 
   .container {
@@ -113,11 +123,22 @@ html {
     display: block !important;
   }
 
+  /* Force visibility of all elements */
   * {
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
     transition: none !important;
     animation: none !important;
     transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* Reset background colors for readability in print if needed, 
+     but keeping the dark theme look as much as possible since user likely wants that. 
+     If it's coming out black/blank, it might be the background-color being problematic. */
+  .bg-background, .bg-card, .bg-secondary {
+    background-color: transparent !important;
+    border: 1px solid #eee !important;
   }
 }
