@@ -51,7 +51,12 @@ export function Projects() {
                   <img 
                     src={project.imageUrl || "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80"} 
                     alt={project.title}
+                    key={project.imageUrl}
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80";
+                    }}
                   />
                 </div>
                 
