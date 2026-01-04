@@ -31,15 +31,18 @@ export async function registerRoutes(
 
       if (resend) {
         try {
-          await resend.emails.send({
+          const emailResponse = await resend.emails.send({
             from: "Portfolio <onboarding@resend.dev>",
             to: "okeyodekingdavid@gmail.com",
             subject: `New Message from ${input.name}`,
             text: `Name: ${input.name}\nEmail: ${input.email}\n\nMessage:\n${input.message}`,
           });
+          console.log("Email sent successfully:", emailResponse);
         } catch (emailErr) {
-          console.error("Failed to send email:", emailErr);
+          console.error("Failed to send email via Resend:", emailErr);
         }
+      } else {
+        console.warn("Resend client not initialized. Check RESEND_API_KEY.");
       }
 
       res.json(message);
