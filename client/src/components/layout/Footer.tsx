@@ -2,7 +2,7 @@ import { Github, Linkedin, Instagram, Mail, MessageCircle } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-secondary/30 border-t border-border py-12 md:py-16">
+    <footer className="bg-secondary/30 border-t border-border py-12 md:py-16 no-print">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-2xl font-bold font-display mb-6">Let's build something amazing together</h2>
         
