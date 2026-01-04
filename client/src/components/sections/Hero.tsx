@@ -5,7 +5,7 @@ import { ArrowRight, Download } from "lucide-react";
 
 export function Hero() {
   return (
-    <section id="hero" className="min-h-screen flex items-center pt-20 relative overflow-visible">
+    <section id="hero" className="min-h-screen flex items-center pt-20 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px] -z-10" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-600/10 rounded-full blur-[100px] -z-10" />

@@ -3,7 +3,7 @@ import profilePic from "@assets/MATRIC-320_1767402764655.jpg";
 
 export function About() {
   return (
-    <section id="about" className="py-24 bg-secondary/30 overflow-visible">
+    <section id="about" className="py-24 bg-secondary/30">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center gap-12">
           <motion.div 

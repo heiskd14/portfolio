@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
-import { Menu, X, FileDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
@@ -19,10 +19,6 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleDownloadPDF = () => {
-    window.print();
-  };
-
   const navLinks = [
     { name: "About", to: "about" },
     { name: "Skills", to: "skills" },
@@ -33,7 +29,7 @@ export function Navbar() {
   return (
     <nav
       className={cn(
-        "fixed top-0 w-full z-50 transition-all duration-300 border-b border-transparent no-print",
+        "fixed top-0 w-full z-50 transition-all duration-300 border-b border-transparent",
         scrolled ? "bg-background/80 backdrop-blur-md border-border/50 py-4 shadow-sm" : "bg-transparent py-6"
       )}
     >
@@ -65,33 +61,13 @@ export function Navbar() {
               {link.name}
             </Link>
           ))}
-          <div className="flex items-center gap-4">
-            <Button 
-              variant="ghost" 
-              size="icon" 
-              onClick={handleDownloadPDF}
-              title="Download as PDF"
-              className="rounded-full"
-              data-testid="button-download-pdf"
-            >
-              <FileDown className="w-5 h-5 text-primary" />
-            </Button>
-            <Link to="contact" smooth={true} duration={500} offset={-100}>
-              <Button size="sm" className="rounded-full px-6">Hire Me</Button>
-            </Link>
-          </div>
+          <Link to="contact" smooth={true} duration={500} offset={-100}>
+            <Button size="sm" className="rounded-full px-6">Hire Me</Button>
+          </Link>
         </div>
 
         {/* Mobile Nav Toggle */}
         <div className="flex items-center gap-2 md:hidden">
-          <Button 
-            variant="ghost" 
-            size="icon" 
-            onClick={handleDownloadPDF}
-            className="rounded-full"
-          >
-            <FileDown className="w-5 h-5 text-primary" />
-          </Button>
           <button
             className="text-foreground p-2"
             onClick={() => setIsOpen(!isOpen)}
