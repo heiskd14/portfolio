@@ -3,6 +3,9 @@ import type { Server } from "http";
 import { storage } from "./storage";
 import { api } from "@shared/routes";
 import { z } from "zod";
+import { Resend } from "resend";
+
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
 export async function registerRoutes(
   httpServer: Server,
@@ -25,6 +28,20 @@ export async function registerRoutes(
     try {
       const input = api.contact.submit.input.parse(req.body);
       const message = await storage.createMessage(input);
+
+      if (resend) {
+        try {
+          await resend.emails.send({
+            from: "Portfolio <onboarding@resend.dev>",
+            to: "okeyodekingdavid@gmail.com",
+            subject: `New Message from ${input.name}`,
+            text: `Name: ${input.name}\nEmail: ${input.email}\n\nMessage:\n${input.message}`,
+          });
+        } catch (emailErr) {
+          console.error("Failed to send email:", emailErr);
+        }
+      }
+
       res.json(message);
     } catch (err) {
       if (err instanceof z.ZodError) {
